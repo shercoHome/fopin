@@ -1,0 +1,15 @@
+<!--pages/toLogin/toLogin.wxml-->
+<view>
+    <!-- 手机号，用于登录  -->
+    <view class="question-title-wrap">
+      登录账号：<input class="{{toErr=='user_account'?'err':'no-err'}}" placeholder="请输入的您的注册手机" maxlength="40" 
+      data-type="user_account" placeholder-style="color:#b3b3b3;font-size:12px;" bindinput="handleInput"></input>
+    </view>
+    <!-- 密码，用于登录  -->
+    <view class="question-title-wrap">
+      登录密码：<input password class="{{toErr=='user_pwd'?'err':'no-err'}}" placeholder="请输入您的登录密码" maxlength="40" 
+      data-type="user_pwd" placeholder-style="color:#b3b3b3;font-size:12px;" bindinput="handleInput"></input>
+    </view>
+
+<button type="primary" class='button-primary' bindtap='toLogin'>立即登录</button>
+</view>

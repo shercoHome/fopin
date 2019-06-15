@@ -1,0 +1,8 @@
+<!--pages/toForget/toForget.wxml-->
+<view class='content'>
+
+<text>联系客服处理</text>
+<image src='http://www.nanshanqiao.com/fopin/upLoad/kf-wechat.jpg'></image>
+
+</view>
+

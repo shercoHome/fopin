@@ -1,0 +1,27 @@
+<!--pages/wantOne/wantOne.wxml-->
+<view class='pro-info'>
+  <text>标题：{{want.want_title}}</text>
+
+  <text>联系人：{{want.want_create_name}}</text>
+  <text bindlongtap='makePhoneCall'>电话：{{want.want_create_phone}}</text>
+
+  <text class='pro-info-detail'>备注：{{want.want_detail_word}}</text>
+
+  <text wx:if="{{want_detail_imgs.length>0&&want_detail_imgs!='isNull'}}">备注图片：</text>
+  <!-- 图片缩略图1  -->
+  <view wx:if="{{want_detail_imgs.length>0&&want_detail_imgs!='isNull'}}" class="question-images">
+    <block wx:for="{{want_detail_imgs}}" wx:key='want_want_detail_imgs' wx:for-index="idx">
+      <view class="q-image-wrap">
+        <image class="q-image" wx:if="{{item.length>4}}" src="{{item}}" mode="widthFix" data-idx="{{idx}}" bindtap="handleImagePreview"></image>
+      </view>
+    </block>
+  </view>
+
+    <text>发布时间：{{want.want_create_time}}</text>
+</view>
+<view class='btns'>
+  <button class='share' type="primary" plain="true" size="default" open-type="share">分享
+  </button>
+  <button class='makePhoneCall' type="primary" size="default" bindtap='makePhoneCall'>联系求购人
+  </button>
+</view>

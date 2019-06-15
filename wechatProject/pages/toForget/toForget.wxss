@@ -1,0 +1,21 @@
+/* pages/toForget/toForget.wxss */
+page{
+  background: #ffffff;
+}
+.content{
+  width: 750rpx;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+}
+text{
+  text-align: center;
+  font-size: 32rpx;
+  color: #333;
+    margin-top: 50rpx;
+}
+image{
+  max-width: 500rpx;
+  margin-top: 50rpx;
+}

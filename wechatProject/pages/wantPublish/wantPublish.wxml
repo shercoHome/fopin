@@ -1,0 +1,58 @@
+<!--pages/wantPublish/wantPublish.wxml-->
+<view class="question-form">
+
+  <view class="question-input-area">
+
+    <!-- 标题  -->
+    <view class="question-title-wrap">
+      标题:<input class="question-title" placeholder="请输入标题" maxlength="40" placeholder-class="phcolor30" bindinput="handleTitleInput"></input>
+    </view>
+
+    <!-- 求购人  -->
+    <view class="question-title-wrap">
+      联系人:<input class="question-title" placeholder="请输入您的姓名" maxlength="40" placeholder-class="phcolor30" bindinput="handleNameInput"></input>
+    </view>
+
+    <!-- 联系电话  -->
+    <view class="question-title-wrap">
+      电话:<input class="question-title" placeholder="请输入联系电话" maxlength="40" placeholder-class="phcolor30" bindinput="handlePhoneInput"></input>
+    </view>
+
+    <!-- 问题正文  -->
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          备注:<textarea class="weui-textarea" placeholder="请输入备注。" maxlength="500" placeholder-class="phcolor30" style="height: 8rem" bindinput="handleContentInput" />
+          <!-- <view class="weui-textarea-counter">{{contentCount}}/500</view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="question-images-area">
+    <!-- 添加图片按钮1  -->
+    <view class="question-images-tool">
+      备注图片：
+      <!-- <button type="default" size="mini" bindtap="chooseImage" data-type="detail" wx:if="{{images.detail.length < images.detailMax}}">+ 点击添加</button> -->
+    </view>
+    <!-- 图片缩略图1  -->
+    <view class="question-images">
+      <block wx:for="{{images.detail}}" wx:key="*this" wx:for-index="idx">
+        <view class="q-image-wrap">
+          <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{idx}}" data-type="detail" bindtap="handleImagePreview"></image>
+          <view class="q-image-remover" data-idx="{{idx}}" data-type="detail" bindtap="removeImage">删除</view>
+        </view>
+      </block>
+
+
+        <view class="q-image-wrap"  wx:if="{{images.detail.length < images.detailMax}}">
+          <image class="q-image" src="/images/add.jpg"  type="default" size="mini" bindtap="chooseImage" data-type="detail"></image>
+          <view class="q-image-remover" data-idx="{{idx}}" data-type="detail" bindtap="removeImage"><text decode="true">&nbsp;</text></view>
+        </view>
+    </view>
+  </view>
+</view>
+
+  <!-- 提交表单按钮  -->
+  <button type="warn"  class="button-default" size="default" bindtap="submitForm">立即发布</button>

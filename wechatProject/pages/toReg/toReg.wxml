@@ -1,0 +1,41 @@
+<!--pages/toReg/toReg.wxml-->
+<view>
+    <!-- 手机号，用于登录  -->
+    <view class="question-title-wrap">
+      登录账号：<input class="{{toErr=='user_account'?'err':'no-err'}}" placeholder="11位手机号，用于找回密码" maxlength="40" 
+      data-type="user_account" placeholder-style="color:#b3b3b3;font-size:12px;" bindinput="handleInput"></input>
+    </view>
+    <!-- 密码，用于登录  -->
+    <view class="question-title-wrap">
+      登录密码：<input password class="{{toErr=='user_pwd'?'err':'no-err'}}" placeholder="6-10位的字母或数字" maxlength="40" 
+      data-type="user_pwd" placeholder-style="color:#b3b3b3;font-size:12px;" bindinput="handleInput"></input>
+    </view>
+    <!-- 密码，用于登录  -->
+    <view class="question-title-wrap">
+      确认密码：<input password class="{{toErr=='user_pwd2'?'err':'no-err'}}" placeholder="重复一遍您的密码" maxlength="40" 
+      data-type="user_pwd2" placeholder-style="color:#b3b3b3;font-size:12px;" bindinput="handleInput"></input>
+    </view>
+    <!-- 厂家名称，用于展示商品  -->
+    <view class="question-title-wrap">
+      厂家名称：<input class="{{toErr=='user_name'?'err':'no-err'}}" placeholder="必填，将展示在商品详情中" maxlength="40" 
+      data-type="user_name" placeholder-style="color:#b3b3b3;font-size:12px;" bindinput="handleInput"></input>
+    </view>
+    <!-- 厂家地址，用于展示商品  -->
+    <view class="question-title-wrap">
+      厂家地址：<input class="{{toErr=='user_addr'?'err':'no-err'}}" placeholder="必填，将展示在商品详情中" maxlength="40" 
+      data-type="user_addr" placeholder-style="color:#b3b3b3;font-size:12px;" bindinput="handleInput"></input>
+    </view>
+     <!-- 厂家电话，用于展示商品  -->
+    <view class="question-title-wrap">
+      联系电话：<input class="{{toErr=='user_phone'?'err':'no-err'}}" placeholder="必填，将展示在商品详情中" maxlength="40" 
+      data-type="user_phone" placeholder-style="color:#b3b3b3;font-size:12px;" bindinput="handleInput"></input>
+    </view>
+
+    <!-- 激活码  -->
+    <view class="question-title-wrap">
+      激 活 码 ：<input class="{{toErr=='user_active_code'?'err':'no-err'}}" placeholder="必填，联系客服获取" maxlength="40" 
+      data-type="user_active_code" placeholder-style="color:#b3b3b3;font-size:12px;" bindinput="handleInput"></input>
+    </view>
+
+<button type="primary" class='button-primary' bindtap='toRegister'>提交注册</button>
+</view>

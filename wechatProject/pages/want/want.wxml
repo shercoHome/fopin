@@ -1,0 +1,19 @@
+<!--pages/want/want.wxml-->
+<view class='list-box'>
+  <text class="tips" wx:if="{{wants.length==0}}">未获取到求购信息</text>
+  <view wx:for="{{wants}}" class='list-box-item' wx:key="pl">
+    <view bindtap='toDetailByID' data-did="{{item.id}}"  class='row r1'>
+      <text class="title">{{item.want_title}}</text>
+      <text class="name">求购人：{{item.want_create_name}}</text>
+      <text class="phone">联系电话：{{item.want_create_phone}}</text>
+    </view>
+    <view class='row r2'>
+      <text class="time">发布时间：{{item.want_create_time}}</text>
+      <text bindtap='makePhoneCall'  data-phone="{{item.want_create_phone}}" class="call">拨打电话</text>
+    </view>
+  </view>
+
+</view>
+<view class='emptyHeight200'></view>
+<button type="warn"  class="button-default" size="default" bindtap='toPublish'>发布求购
+</button>
